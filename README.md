@@ -112,7 +112,8 @@ Put your CI (travis, circle, drone) configurations and scripts in the `/build/ci
 
 ### `/deployments`
 
-IaaS, PaaS, system and container orchestration deployment configurations and templates (docker-compose, kubernetes/helm, terraform). Note that in some repos (especially apps deployed with kubernetes) this directory is called `/deploy`.
+Docker test framework for demonstration and to power unit and integration tests. Brings up an iRODS environment of various types 
+including provisioning of test accounts and other configuration as expected by test frameworks and default properties
 
 ### `/test`
 
