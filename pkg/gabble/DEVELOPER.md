@@ -7,10 +7,12 @@ adopting zerolog: https://betterstack.com/community/guides/logging/zerolog/
 
 ### properties and config
 
-see https://pkg.go.dev/github.com/magiconair/properties#section-readme
+adopting viper: https://github.com/spf13/viper
 
+## testing utils
 
-
+random file trees: https://github.com/jbenet/go-random-files
+more randomness: github.com/brianvoe/gofakeit/v6
 
 ### structuring code
 
@@ -21,3 +23,5 @@ https://go.dev/blog/using-go-modules
 context versus threadlocal: https://go.dev/blog/context
 
 docs: https://go.dev/blog/godoc
+
+style: https://google.github.io/styleguide/go/best-practices.html
