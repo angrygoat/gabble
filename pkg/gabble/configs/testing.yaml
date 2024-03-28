@@ -1,0 +1,14 @@
+Host: icat.example.org
+Port: 1247
+Zone: tempZone
+User1: test1
+Password1: test
+User2: test2
+Password2: test2
+User3: test3
+Password3: test3
+RodsUser: rods
+RodsPassword: rods
+LocalScratchPath: ~/temp/gabble
+FederationTest: false
+RemoteRescTest: false

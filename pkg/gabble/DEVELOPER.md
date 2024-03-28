@@ -19,6 +19,8 @@ viper: https://pkg.go.dev/github.com/spf13/viper#section-readme
 
 random file trees: https://github.com/jbenet/go-random-files
 more randomness: github.com/brianvoe/gofakeit/v6
+setup and teardown: https://medium.com/nerd-for-tech/setup-and-teardown-unit-test-in-go-bd6fa1b785cd
+
 
 ### structuring code
 
