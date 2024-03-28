@@ -29,11 +29,26 @@ type AgentConnection struct {
 }
 
 func ConnectAgent(conSpec ConSpec, context context.Context) (AgentConnection, error) {
-	log.Info().Msg("Hello from Zerolog global logger")
-	secs, _ := translateTimeout(conSpec.TimeoutSeconds)
-	dialer := net.Dialer{
-		Timeout: secs,
+	log.Info().Msg("ConnectAgent()")
+	timeout, error := translateTimeout(conSpec.TimeoutSeconds)
+
+	if error != nil {
+		log.Error().Msg(error.Error())
+		return AgentConnection{}, error
 	}
+
+	keepalive, error := translateTimeout(conSpec.KeepaliveSeconds)
+
+	if error != nil {
+		log.Error().Msg(error.Error())
+		return AgentConnection{}, error
+	}
+
+	dialer := net.Dialer{
+		Timeout:   timeout,
+		KeepAlive: keepalive,
+	}
+
 	addr := fmt.Sprintf("%s:%d", conSpec.Host, conSpec.Port)
 	conn, err := dialer.DialContext(context, "tcp", addr)
 	//conn, err := net.Dial("tcp", addr)

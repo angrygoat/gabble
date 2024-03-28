@@ -1,0 +1,9 @@
+host: icat.example.org
+port: 1247
+zone: tempZone
+user: test1
+password: test
+user2: test2
+password2: test2
+rods_user: rods
+rods_password: rods

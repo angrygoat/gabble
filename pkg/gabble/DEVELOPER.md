@@ -4,10 +4,16 @@ Strategies and tools
 
 see https://blog.boot.dev/golang/golang-logging-best-practices/
 adopting zerolog: https://betterstack.com/community/guides/logging/zerolog/
+formatting: https://gobyexample.com/string-formatting
+
+### error handling
+
+wrapping errors/custom errors: https://earthly.dev/blog/golang-errors/
 
 ### properties and config
 
 adopting viper: https://github.com/spf13/viper
+viper: https://pkg.go.dev/github.com/spf13/viper#section-readme  
 
 ## testing utils
 

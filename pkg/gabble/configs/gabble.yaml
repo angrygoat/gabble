@@ -1,0 +1,3 @@
+ConnectionTimeoutSeconds: 30
+ConnectionKeepaliveSeconds: 30
+ConnectionUseMultipathTcp: true
