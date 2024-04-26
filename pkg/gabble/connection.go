@@ -23,9 +23,9 @@ type ConSpec struct {
 
 // AgentConnection  represents the low level connection to an iRODS agent
 type AgentConnection struct {
-	ConSpec    ConSpec         // conspec used to create this connection
-	Context    context.Context // context shared among functions that ties to the underlying connection
-	Connection net.Conn        // connection associated with the agent, the underlying TCP connection to the iRRODS agent
+	conSpec    ConSpec         // conspec used to create this connection
+	context    context.Context // context shared among functions that ties to the underlying connection
+	connection net.Conn        // connection associated with the agent, the underlying TCP connection to the iRRODS agent
 }
 
 // get the ConSpec() elements that are derived from the underlying config
@@ -43,20 +43,20 @@ func ConSpecFromConfig() (ConSpec, error) {
 
 }
 
-func ConnectAgent(conSpec ConSpec, context context.Context) (AgentConnection, error) {
+func (ac *AgentConnection) ConnectAgent(conSpec ConSpec, context context.Context) error {
 	log.Info().Msg("ConnectAgent()")
 	timeout, error := translateSecondsToDuration(conSpec.TimeoutSeconds)
 
 	if error != nil {
 		log.Error().Msg(error.Error())
-		return AgentConnection{}, error
+		return error
 	}
 
 	keepalive, error := translateSecondsToDuration(conSpec.KeepaliveSeconds)
 
 	if error != nil {
 		log.Error().Msg(error.Error())
-		return AgentConnection{}, error
+		return error
 	}
 
 	dialer := net.Dialer{
@@ -72,13 +72,11 @@ func ConnectAgent(conSpec ConSpec, context context.Context) (AgentConnection, er
 		fmt.Println(err)
 	}
 
-	agentConnection := AgentConnection{
-		ConSpec:    conSpec,
-		Context:    context,
-		Connection: conn,
-	}
+	ac.conSpec = conSpec
+	ac.context = context
+	ac.connection = conn
 
-	return agentConnection, err
+	return err
 
 }
 

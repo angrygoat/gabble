@@ -10,6 +10,14 @@ formatting: https://gobyexample.com/string-formatting
 
 wrapping errors/custom errors: https://earthly.dev/blog/golang-errors/
 
+```go
+doc, err := html.Parse(resp.Body)
+resp.Body.Close()
+if err != nil {
+    return nil, fmt.Errorf("parsing %s as HTML: %v", url, err)
+}
+```
+
 ### properties and config
 
 adopting viper: https://github.com/spf13/viper

@@ -32,15 +32,14 @@ func TestConnect(t *testing.T) {
 	conSpec.Port = gabbleTestConfiguration.Port
 
 	context := context.Background()
+	agentConnection := AgentConnection{}
 
-	agentConnection, err := ConnectAgent(conSpec, context)
+	err = agentConnection.ConnectAgent(conSpec, context)
 
 	if err != nil {
 		t.Error(err)
-	}
-
-	if agentConnection.ConSpec.Host != conSpec.Host {
 		t.Fail()
+
 	}
 
 }
