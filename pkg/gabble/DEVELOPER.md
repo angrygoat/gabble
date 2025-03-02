@@ -1,10 +1,17 @@
 Strategies and tools
 
+### docs
+
+learning go: https://go.dev/doc/#learning
+effective go: https://go.dev/doc/effective_go
+
 ### logging
 
 see https://blog.boot.dev/golang/golang-logging-best-practices/
 adopting zerolog: https://betterstack.com/community/guides/logging/zerolog/
 formatting: https://gobyexample.com/string-formatting
+
+protocol debug buffer? https://stackoverflow.com/questions/2818852/is-there-a-queue-implementation
 
 ### error handling
 

@@ -4,6 +4,27 @@ import (
 	"testing"
 )
 
+func TestIrods(t *testing.T) {
+
+	unitUtils, err := NewUnitUtils()
+
+	actual := unitUtils.gabbleConfiguration
+
+	if err != nil {
+		t.Errorf("failed to create unit utils: %v", err)
+	}
+
+	irods, err := NewIrods()
+
+	if err != nil {
+		t.Errorf("failed to create irods: %v", err)
+	}
+
+	if irods.gabbleConfiguration != actual {
+		t.Errorf("gabble configuration missing in irods")
+	}
+}
+
 func TestConnectAgent(t *testing.T) {
 
 	unitUtils, err := NewUnitUtils()

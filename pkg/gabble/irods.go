@@ -24,6 +24,8 @@ type IrodsAccount struct {
 	DefaultStorageResource string
 	UserName               string
 	Password               string
+	ProxyUserName          string
+	ProxyZone              string
 	AuthType               AuthType
 }
 
@@ -106,7 +108,15 @@ func connectionInitialization(irodsContext *IrodsContext) error {
 		return err
 	}
 	irodsContext.agentConnection = &agentConnection
-	log.Debug().Msg("connected...")
+	// ssl negotiation? set negotiation and encryption
+	// check /lib/core/src/rcConnect.cpp...
+	// startup pack
+	log.Debug().Msg("connected tcp...now send startup pack")
 	return nil
 
+}
+
+func sendStartupPack(irodsContext *IrodsContext) error {
+	log.Debug().Msg("sendStartupPack()")
+	return nil
 }

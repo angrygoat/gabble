@@ -1,3 +1,4 @@
 ConnectionTimeoutSeconds: 30
 ConnectionKeepaliveSeconds: 30
 ConnectionUseMultipathTcp: true
+ClientServerNegotiationDefault: CS_NEG_REFUSE

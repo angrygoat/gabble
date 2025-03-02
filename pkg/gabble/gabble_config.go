@@ -12,9 +12,11 @@ configuration of gabble via viper
 */
 
 type GabbleConfiguration struct {
-	ConnectionTimeoutSeconds   int
-	ConnectionKeepaliveSeconds int
-	ConnectionUseMultipathTcp  bool
+	ConnectionTimeoutSeconds       int
+	ConnectionKeepaliveSeconds     int
+	ConnectionUseMultipathTcp      bool
+	ClientServerNegotiationDefault string
+	LocalIp                        string
 }
 
 /*
@@ -36,6 +38,7 @@ type GabbleTestConfiguration struct {
 	LocalScratchPath string
 	FederationTest   bool
 	RemoteRescTest   bool
+	LocalIp          string
 }
 
 // call to establish the configuration from properties
