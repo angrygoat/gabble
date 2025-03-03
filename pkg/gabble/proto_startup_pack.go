@@ -2,7 +2,6 @@ package gabble
 
 import (
 	"bytes"
-	"os"
 	"text/template"
 )
 

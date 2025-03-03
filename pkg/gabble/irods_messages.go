@@ -5,9 +5,6 @@ const XMLOPEN = "<"
 const XMLCLOSE = ">"
 const OPENENDTAG = "</"
 
-const RENDER_PROTO_AS_XML = "X"
-const RENDER_PROTO_AS_BINARY = "B"
-
 /*
 An IrodsMessage interface defines the methods that each iRODS protocol operation provides. Each protocol is
 defined as a struct with all of the possible values, and the various 'proto_' implementations are responsible for
@@ -19,4 +16,5 @@ type IrodsProtocolDefinition interface {
 	PackMessage(pack StartupPack) ([]byte, error)
 }
 
-struct IrodsMessage {}
+type IrodsMessage struct {
+}
